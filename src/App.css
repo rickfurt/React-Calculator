@@ -19,8 +19,7 @@
   margin: 5px 5px 10px 5px;
   width: auto;
   height: 50px;
-  background-color: gray;
-
+  background-color:#ffb451;
 }
 
 .preview{
@@ -53,7 +52,7 @@
 }
 
 .operator,.number{
-  color: white;
+  color: black;
   font-size: 30px;
   text-align: center;
   width: 60px;
@@ -61,12 +60,41 @@
   border-radius:10%;
 }
 
+.number:hover{
+  background-color: black;
+  color:white;
+  transform: scale(0.9)
+}
+
+.operator:hover{
+  background-color: black;
+  color:white;
+  transform: scale(0.9)
+}
+
+
 .clear{
-  width: 60px;
-  border-radius:10%;
+  width: 120px;
+  border-radius:5%;
   background-color:#ffb451;
   /* border:1px solid white; */
-  color: white;
+  color: black;
   font-size: 30px;
   margin:1px 1px 0 1px;
+}
+
+.clear:hover{
+  background-color: black;
+  color:white;
+  transform: scale(0.9)
+}
+
+.credit{
+  color:white;
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 0.2rem;
+  align-items: center;
+  margin-top: 8px;
 }
