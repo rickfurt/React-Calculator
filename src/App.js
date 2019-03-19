@@ -7,10 +7,14 @@ class App extends Component {
     this.state = {
       display:0,
       store:[],
-      initial:0
+      initial:0,
+      result:'',
+      operation:[],
+      operator:''
     }
     this.handleClick = this.handleClick.bind(this);
     this.clear = this.clear.bind(this);
+    this.operation = this.operation.bind(this);
   }
 
   handleClick(e){
@@ -25,21 +29,39 @@ class App extends Component {
   clear(){
     this.setState({
       store:[],
-      display:this.state.initial
+      display:this.state.initial,
+      operation:[],
+      operator:'',
+      value1:''
     })
   }
+
+  operation(e){
+    var temp = this.state.store.join();
+    // var operator = this.state.store[1];
+    var arr = this.state.operation.concat(temp);
+
+    this.setState({
+      value1:temp,
+      display:this.state.initial,
+      store:[],
+      operation:arr
+    })
+  }
+
+
 
   render() {
     return (
       <div className="app-container">
         <div className="display">
-          <div className="preview" id="display" onChange={this.handleDisplay}>
+          <div className="preview" id="display">
             {this.state.display}
         </div>
         </div>
         
         <div className="operators">
-          <button className="operator" id="add">+</button>
+          <button className="operator" id="add" value="+" onClick={this.operation}>+</button>
           <button className="operator" id="subtract">-</button>
           <button className="operator" id="divide" >÷</button>
           <button className="operator" id="multiply">*</button>
@@ -58,11 +80,17 @@ class App extends Component {
           <button className="number" id="zero"value="0" onClick={this.handleClick}>0</button>
           
           <span className="clearfix">
-            <button className="clear" id="clear" value="0" onClick={this.clear}>AC</button>
+            <button className="clear" id="clear" onClick={this.clear}>AC</button>
             <button className="operator" id="equals">=</button>
           </span>
         </div>
         <p className="credit">Design By Ricardo Furtado</p>
+        <hr className="credit" />
+        <p className="credit">For Test Reasons</p>
+        <p className="credit">Value 1 -- {this.state.value1}</p>
+        <p className="credit">Operator -- {this.state.operator}</p>
+        <p className="credit">Value 2 -- {this.state.value2}</p>
+        <p className="credit">Operation-- {this.state.operation}</p>
     </div>
     );
   }
