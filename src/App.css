@@ -8,7 +8,7 @@
 .app-container{
   width: 260px;
   height: auto;
-  background-color: black;
+  background-color:  #000000;
   margin: auto;
   margin-top: 100px;
   border:3px solid gray;
@@ -58,7 +58,7 @@
 }
 
 .operator,.number{
-  color: black;
+  color: #000000;
   font-size: 30px;
   text-align: center;
   width: 60px;
@@ -67,7 +67,7 @@
 }
 
 .number:hover{
-  background-color: black;
+  background-color:  #000000;
   color:white;
   transform: scale(0.95);
   -webkit-transform: scale(0.95);
@@ -77,7 +77,7 @@
 }
 
 .operator:hover{
-  background-color: black;
+  background-color:#000000;
   color:white;
   transform: scale(0.9);
   -webkit-transform: scale(0.95);
@@ -92,13 +92,13 @@
   border-radius:5%;
   background-color:#ffb451;
   /* border:1px solid white; */
-  color: black;
+  color:  #000000;
   font-size: 30px;
   margin:1px 1px 0 1px;
 }
 
 .clear:hover{
-  background-color: black;
+  background-color:  #000000;
   color:white;
   transform: scale(0.95);
   -webkit-transform: scale(0.95);

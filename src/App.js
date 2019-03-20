@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   operation(e){
-    var temp = this.state.store.join();
+    var temp = this.state.store.join('');
     // var operator = this.state.store[1];
     var arr = this.state.operation.concat(temp);
 
@@ -61,7 +61,7 @@ class App extends Component {
         </div>
         
         <div className="operators">
-          <button className="operator" id="add" value="+" onClick={this.operation}>+</button>
+          <button className="operator" id="add" onClick={this.operation}>+</button>
           <button className="operator" id="subtract">-</button>
           <button className="operator" id="divide" >÷</button>
           <button className="operator" id="multiply">*</button>
