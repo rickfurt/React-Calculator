@@ -7,9 +7,8 @@ class App extends Component {
     super()
     this.state = {
       input:'',
-      display:0,
       store:[],
-      initial:0,
+      initial:'0',
       result:'0',
     }
     this.handleEqual = this.handleEqual.bind(this);
@@ -33,7 +32,6 @@ class App extends Component {
 
   clear = () => {
     this.setState({
-      store:[],
       result:this.state.initial,
     })
   }
@@ -70,7 +68,7 @@ class App extends Component {
           <button className="number" id="one" value="1" onClick={this.handleClick}>1</button>
           <button className="number" id="two" value="2" onClick={this.handleClick}>2</button>
           <button className="number" id="three" value="3" onClick={this.handleClick}>3</button>
-          <button className="number" id="zero"value="0" onClick={this.handleClick}>0</button>
+          <button className="zero" id="zero"value="0" onClick={this.handleClick}>0</button>
           
           <span className="clearfix">
             <button className="clear" id="clear" onClick={this.clear}>AC</button>
