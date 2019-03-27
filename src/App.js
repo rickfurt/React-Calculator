@@ -17,7 +17,14 @@ class App extends Component {
 
   handleClick = e => {
     const regExp = /^0*/;
-    const filter = this.state.result.replace(regExp,'');
+    const first = this.state.result[0];
+    var filter;
+    
+    if(first === '0'){
+      filter =  this.state.result.replace(regExp,'');
+    }else{
+      filter = this.state.result;
+    };
 
       this.setState({
         result:filter + e.target.value,
