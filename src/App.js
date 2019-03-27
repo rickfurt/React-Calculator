@@ -77,12 +77,7 @@ class App extends Component {
             <button className="operator" onClick={this.handleEqual} id="equals">=</button>
           </span>
         </div>
-        <p className="credit">Design By Ricardo Furtado</p>
-
-        <p className="credit">For Test Reasons</p>
-        <p className="credit">Result W regex -- {this.state.display}</p>
-
-        
+        <p className="credit">Design By Ricardo Furtado</p>        
     </div>
     );
   }
