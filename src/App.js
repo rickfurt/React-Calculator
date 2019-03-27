@@ -10,35 +10,57 @@ class App extends Component {
       store:[],
       initial:'0',
       result:'0',
+      dot:true
     }
     this.handleEqual = this.handleEqual.bind(this);
   }
 
   handleClick = e => {
-    const regExp = /^0*/;
     const first = this.state.result[0];
     var filter;
     
-    if(first === '0'){
-      filter =  this.state.result.replace(regExp,'');
-    }else{
-      filter = this.state.result;
-    };
+    switch(e.target.value){
+      case '.': this.setState({dot:true});
+       break;
+      case '-':this.setState({dot:false});
+       break;
+      case '+':this.setState({dot:false});
+       break;
+      case '*':this.setState({dot:false});
+       break;
+      case '/':this.setState({dot:false});
+       break;
+       default:this.setState({dot:false});
+       break;
+    }
 
-      this.setState({
-        result:filter + e.target.value,
-      })
+    if(this.state.dot === true && e.target.value === '.'){
+      e.target.value = '';
+    }
+    
+    if(e.target.value === ' '){
+      e.target.value = '';
+    }
+    
+
+    (first === '0')? filter =  this.state.result.replace('0','') : filter = this.state.result;
+
+    this.setState({
+      result:filter + e.target.value,
+    })
   }
 
   clear = () => {
     this.setState({
       result:this.state.initial,
+      dot:false
     })
   }
 
   handleEqual(){
     this.setState({
       result:  math.eval(this.state.result),
+      dot:false
     })
   }
 
@@ -56,7 +78,7 @@ class App extends Component {
           <button className="operator" id="subtract" value="-" onClick={this.handleClick}>-</button>
           <button className="operator" id="divide" value="/" onClick={this.handleClick}>÷</button>
           <button className="operator" id="multiply" value="*" onClick={this.handleClick}>*</button>
-          <button className="operator" id="decimal" value=".">.</button>
+          <button className="operator" id="decimal" value="." onClick={this.handleClick}>.</button>
         </div>
         <div className="numbers">
           <button className="number" id="seven" value="7" onClick={this.handleClick}>7</button>
