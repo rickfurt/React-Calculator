@@ -10,7 +10,7 @@ class App extends Component {
       store:[],
       initial:'0',
       result:'0',
-      dot:true
+      dot:false
     }
     this.handleEqual = this.handleEqual.bind(this);
   }
@@ -29,8 +29,6 @@ class App extends Component {
       case '*':this.setState({dot:false});
        break;
       case '/':this.setState({dot:false});
-       break;
-       default:this.setState({dot:false});
        break;
     }
 
